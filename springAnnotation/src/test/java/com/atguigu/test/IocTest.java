@@ -57,21 +57,29 @@ public class IocTest {
     }
 
     @Test
-    //exp11
+    //exp11 factory默认获取的是getObject创建的对象
     public void FactoryBean(){
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         String[] definitionName = applicationContext.getBeanDefinitionNames();
         for(String name : definitionName){
             System.out.println(name);
         }
+        System.out.println("----------");
+        Object b = applicationContext.getBean("colorFactoryBean");//注意首字母小写
+        System.out.println(b.getClass());
+        //要获取factoryBean 本身 需要给id前面加一个& 符号
+        Object c = applicationContext.getBean("&colorFactoryBean");//注意首字母小写
+        System.out.println(c.getClass());
         Color c1 = applicationContext.getBean(Color.class);
         Color c2 = applicationContext.getBean(Color.class);
         System.out.println(c1==c2);
     }
 
+    //exp11
     @Test
     public void testLifeOfBean(){
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfFactory.class);
+        applicationContext.getBean("ColorFactoryBean");
         applicationContext.close();
     }
 
