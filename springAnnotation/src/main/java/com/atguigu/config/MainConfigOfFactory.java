@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Bean;
  *        单实例;容器关闭的时候
  *        多实例 容器不会管理这个Bean  容器不会调用销毁方法
  *
+ * exp13 通过InitialzingBean
  *
 **/
 public class MainConfigOfFactory {

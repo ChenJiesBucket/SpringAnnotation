@@ -2,6 +2,7 @@ package com.atguigu.config;
 
 import com.atguigu.Condition.LinuxCondition;
 import com.atguigu.Condition.WindowsCondition;
+import com.atguigu.bean.Cat;
 import com.atguigu.bean.Color;
 import com.atguigu.bean.Person;
 import org.springframework.context.annotation.*;
@@ -49,6 +50,9 @@ public class MainConfig2 {
         return new Person("Linus",65);
     }
 
-
-
+    //exp12
+    @Bean("cat")
+    public Cat cat(){
+        return new Cat();
+    }
 }
