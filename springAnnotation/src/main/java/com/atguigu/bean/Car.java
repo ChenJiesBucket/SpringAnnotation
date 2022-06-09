@@ -1,5 +1,9 @@
 package com.atguigu.bean;
+
+import org.springframework.stereotype.Component;
+
 /*exp12*/
+@Component
 public class Car {
     public Car(){
         System.out.println("Car Constroster");

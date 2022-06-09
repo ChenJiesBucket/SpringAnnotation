@@ -44,7 +44,7 @@ public class MainConfig2 {
     }
 
     //按照条件进行初始化Bean  vm 配置 -Dos.name=linux
-    @Conditional({LinuxCondition.class})
+    @Conditional({LinuxCondition. })
     @Bean("linus")
     public Person person5(){
         return new Person("Linus",65);
